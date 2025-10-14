@@ -1,0 +1,2182 @@
+/* ====== Soho Suites — Modern Luxury Style (2025) ====== */
+
+/* Optional local font (kept if you use Hello Paris elsewhere) */
+@font-face{
+  font-family:"Hello Paris";
+  src:url("fonts/HelloParisSerifLight.ttf") format("truetype");
+  font-weight:400; font-style:normal; font-display:swap;
+}
+
+
+/* -------- Theme tokens -------- */
+:root{
+  --bg:#D6BFA6;        /* page background beige */
+  --muted:#F6F4F2;     /* soft off-white blocks */
+  --text:#1a1a1a;      /* ink */
+  --sub:#6b6b6b;       /* secondary text */
+  --brand:#D6BFA6;     /* accent beige for buttons etc. */
+  --border:#e9e6e3;    /* light separators */
+}
+
+
+/* Base */
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+html{
+  font-size:clamp(15px,0.9vw + 12px,18px);
+}
+img{
+  max-width:100%;
+  height:auto;
+  display:block
+}
+a{
+  color:inherit;
+  text-decoration:none}
+.container{
+  width:min(1120px,92%);
+  margin:0 auto
+}
+.center{
+  text-align:center
+}
+.sub{
+  color:black
+}
+.section{
+  padding:80px 0
+}
+.section-muted{
+  background:var(--muted)
+}
+.grid-2{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px
+}
+@media (max-width:900px){.grid-2{grid-template-columns:1fr}}
+
+
+/* Typography */
+.h2{
+  font-family:"Playfair Display",serif;
+  font-weight:400;
+  font-size:clamp(1.6rem,2vw,2.3rem);
+}
+.h2{
+  font-family:"Playfair Display",serif;
+  font-weight:400;
+  font-size:clamp(1.6rem,2vw,2.3rem);
+}
+.display{
+  font-family:"Playfair Display",serif;
+  color:black;
+  font-weight:400;
+  font-size:clamp(2.2rem,6vw,4.2rem);
+}
+.lead{
+  font-size:clamp(1rem,1.2vw,1.15rem);
+  line-height:1.65;
+  opacity:.95;
+  max-width:720px;
+}
+
+/* ensure nav is above page for mobile layers */
+.nav { z-index: 200; }
+
+
+
+
+header.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent; /* makes it see-through */
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none !important;
+  z-index: 300; /* ensures it stays on top of the hero image */
+  padding: 20px 0; /* optional spacing */
+}
+
+
+header.nav .nav-inner a {
+  color: black; /* make links visible on the photo */
+  text-decoration: none;
+}
+
+header.nav .brand img {
+  filter: brightness(0) invert(1); /* makes your logo white if it’s dark */
+}
+
+header.nav .menu a:hover {
+  opacity: 0.8; /* subtle hover effect */
+}
+
+
+
+/* Overlay nav only for hero (home) */
+header.nav.on-hero{
+  position:absolute;
+  top:0; left:0; width:100%;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+  z-index:50;
+}
+
+/* Make links + burger visible on dark photo */
+header.nav.on-hero .menu a,
+header.nav.on-hero .burger{
+  color:black;
+}
+
+/* Ensure bar color follows the text color */
+header.nav.on-hero .burger span{
+  background: currentColor;
+}
+
+
+
+/* -------- Buttons (2025 look) -------- */
+.btn {
+  background: var(--brand);
+  color: #000;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transform: translateY(0);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  background: #e2cdb4; /* slightly lighter beige for hover */
+}
+
+.suite-title-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+  background: var(--brand);
+  color:  #e2cdb4;
+  transition: transform 0.15s ease, background 0.3s ease;
+}
+.btn.ghost {
+  background: transparent;
+  color: #000;
+  border: 1.5px solid #000;
+  box-shadow: none;
+}
+.btn.ghost:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-3px);
+}
+.hero-btn:hover {
+  background: transparent;
+  color: #000;
+  border: 2px solid #000;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+/* -------- Nav -------- */
+/* Home hero overlay nav (index.html only) */
+.home header.nav{
+  position: absolute;
+  top: 0; left: 0; width: 100%;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  z-index: 50;              /* make sure it’s above the hero */
+}
+
+/* Make text + burger white on the hero */
+.home header.nav .menu a,
+.home header.nav .burger { 
+  color: #fff;              /* was black – that’s why it vanished */
+}
+
+/* If your burger uses three spans (recommended) */
+.home header.nav .burger span{
+  background: currentColor; /* renders white here */
+}
+
+/* Optional: keep the logo visible on dark photo */
+.home header.nav .brand img{
+  filter: brightness(0) invert(1);
+}
+
+
+
+
+
+
+.nav{
+  position:sticky; 
+  top:0; 
+  z-index:200;
+  background:rgba(214,191,166,.92);
+  backdrop-filter:saturate(160%) blur(12px);
+  box-shadow:0 8px 28px rgba(0,0,0,.08);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:76px;
+  padding:8px 0
+}
+.brand img{
+  height:56px;
+  width:auto;
+  display:block
+}
+.menu{
+  display:flex;
+  gap:22px;
+  align-items:center
+}
+.menu a{
+  position:relative;
+  display:inline-block;
+  color:#1a1a1a;
+  text-decoration:none;
+  transition:transform 0.35s ease,color 0.35s ease;
+}
+.menu a:hover{
+  transform:translateY(-2px)
+}
+.menu a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  height:2px;
+  width:0;
+  background:#000;
+  transition:width 0.35s ease;
+}
+.menu a:hover::after,.menu a.active::after{
+  width:100%
+}
+.menu .btn{
+  margin-left:6px
+}
+
+
+
+/* -------- Burger Icon -------- */
+.burger {
+  position: relative;
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #1a1a1a;
+  border-radius: 1px;
+  transition: all 0.35s ease;
+}
+
+/* When menu is open, morph into X */
+.nav.is-open .burger span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.nav.is-open .burger span:nth-child(2) {
+  opacity: 0;
+}
+.nav.is-open .burger span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+  /* desktop: hide burger */
+.burger{ display:none; }
+
+
+@media (max-width: 880px){
+  header.nav .burger{
+    position: relative;
+    display:block;
+    z-index:300;
+    font-size:28px;
+    padding:8px 10px;
+    cursor:pointer;
+    color:#1a1a1a;
+    background:none;
+    border:0;
+  }
+
+  /* BACKDROP behind menu */
+  .nav::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.35);   /* soft transparent dim */
+    backdrop-filter:blur(4px);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .3s ease;
+    z-index:140;
+  }
+
+/* show backdrop when menu is open (JS toggles .is-open on .nav) */
+.nav.is-open::after{
+  opacity:1;
+  pointer-events:auto;
+}
+
+
+/* MENU PANEL */
+.menu{
+  position: fixed;
+  inset: 76px 0 0 0;
+  min-height: calc(100svh - 76px);
+  background: linear-gradient(to bottom right,
+  rgba(245, 236, 225, 0.85),
+  rgba(255, 255, 255, 0.75)
+);
+  backdrop-filter: saturate(180%) blur(24px);
+  padding: 28px;
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+  border-radius: 20px 20px 0 0;      /* soft rounded top corners */
+  box-shadow: 0 20px 40px rgba(0,0,0,.18);
+  z-index: 210;
+  transform: translateY(-12px);
+  opacity: 0;
+  transition: transform .35s ease, opacity .35s ease;
+  overflow-y: auto;
+}
+.menu.open{
+  display:flex;
+  transform:translateY(0);
+  opacity:1;
+}
+
+/* LINKS */
+.menu a{
+  color:#111;
+  font-size:1.05rem;
+  font-weight:500;
+  letter-spacing:0.4px;
+  padding:12px 0;
+  width:100%;
+  text-decoration:none;
+  transition:color .25s ease, letter-spacing .25s ease;
+  border-bottom:1px solid rgba(0,0,0,0.08); /* subtle divider */
+}
+
+.menu a:last-of-type{
+  border-bottom:none;
+}
+
+.menu a:hover{
+  color:var(--brand);
+  letter-spacing:0.6px;
+}
+
+.menu .btn{
+  width:100%;
+  text-align:center;
+  background:var(--brand);
+  color:#fff;
+  border-radius:40px;
+  padding:14px 0;
+  margin-top:16px;
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.menu .btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+  .brand img{
+    height:50px;
+  }
+}
+
+
+
+
+/* -------- Hero -------- */
+.hero {
+  position: relative;
+  height: 100vh; /* desktop */
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Mobile viewport toolbar-safe height */
+@media (max-width: 768px){
+  .hero { height: 100svh; }
+}
+
+.hero-media {
+  position: absolute; 
+  inset: 0;           /* top/right/bottom/left: 0 */
+  z-index: -1; 
+}
+
+.hero-media img{
+  width:100%;
+  height:auto;
+  object-fit:cover;
+  filter:contrast(1.02) saturate(1.02);
+  display: block;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)); /* fades out */
+  z-index: 1;
+}
+
+.hero-content{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  color:#fff;
+  text-align:center;
+}
+.display span{
+  color:var(--brand)
+}
+.lead{
+  margin:0 auto 22px;
+  color:black;
+  align-items: center;
+}
+.hero-content .cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap; /* allows them to stack on small screens if needed */
+}
+
+
+
+
+/* --- Mobile: make text sit on the actual picture --- */
+@media (max-width: 768px){
+  /* Let the hero shrink to the image height */
+  .hero{
+    height: auto;          /* instead of 100svh for mobile */
+    overflow: visible;     /* avoid clipping */
+  }
+
+  /* Make the image define the height, and be the positioning parent */
+  .hero-media{
+    position: relative;    /* was absolute */
+    inset: auto;           /* cancel absolute inset */
+    z-index: 0;
+  }
+
+  .hero-media img{
+    width: 100%;
+    height: auto;          /* keep full photo, no crop */
+    object-fit: contain;   /* show whole image */
+    display: block;
+  }
+
+  /* Keep the gradient tied to the image area */
+  .hero-overlay{
+    position: absolute;    /* stays over the image only */
+    inset: 0;
+    z-index: 1;
+  }
+
+  /* Now overlay the text on the image area (not the whole hero) */
+  .hero-content{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  /* Title on one line; buttons on next row */
+  .hero-content .display{ white-space: nowrap; color:#fff; }
+  .hero .lead{ color:#000000; }
+}
+/* --- Mobile typography & button scaling --- */
+@media (max-width: 768px){
+
+  /* Title size */
+  .hero-content .display{
+    font-size: clamp(1.4rem, 5vw, 1.8rem); /* scales smoothly for phones */
+    line-height: 1.2;
+    color: #000;
+  }
+
+  /* Subtitle / paragraph */
+  .hero .lead{
+    font-size: clamp(0.9rem, 3.5vw, 1rem);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  /* Buttons */
+  .hero-content .btn,
+  .hero-content .ghost{
+    font-size: 0.9rem;
+    padding: 10px 22px;
+    border-radius: 50px;
+  }
+
+  /* Reduce gap between title and buttons slightly */
+  .hero-content .cta{
+    gap: 0.7rem;
+  }
+}
+
+
+
+
+
+
+/* -------- About -------- */
+
+/* Make muted sections feel lighter + premium */
+.section-muted{ background: #ddcebd; }
+
+/* Slightly tighten spacing in About on mobile */
+@media (max-width: 768px){
+  #about .lead{ margin-bottom: 10px; }
+  #about .checks li{ margin: 8px 0; }
+}
+
+#about.section {
+  padding-top: 10px;
+}
+
+#about .h2{
+  text-align: center;
+}
+#about .lead{
+  text-align: center;
+}
+.about-photo{
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.08)
+}
+.checks{
+  list-style:none;
+  padding:0;
+  margin:18px 0 0
+}
+.checks li{
+  margin:10px 0;
+  padding-left:28px;
+  position:relative;
+  color:var(--sub)}
+.checks li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:black;
+  font-weight:400
+}
+
+
+
+/* -------- Suites Cards -------- */
+
+
+/* compact = reduced top padding (wins with !important) */
+.section.compact { 
+  padding-top: 24px !important;      /* adjust to taste */
+}
+
+/* mobile tweak */
+@media (max-width: 768px){
+  .section.compact { 
+    padding-top: 16px !important; 
+  }
+}
+
+/* kill any extra spacing from inside the section */
+#suites .h2 { 
+  margin-top: 0 !important; 
+  margin-bottom: 10px; 
+}
+#suites .sub { 
+  margin-top: 0 !important; 
+  margin-bottom: 22px; 
+}
+#suites .container { 
+  padding-top: 0 !important; 
+}
+#suites .container > :first-child { 
+  margin-top: 0 !important; 
+}
+
+/* (optional) also reduce the section above, so the gap isn’t double */
+#about.section { 
+  padding-bottom: 48px !important; 
+}
+
+
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;margin-top:26px
+}
+@media(max-width:950px){.cards{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.cards{grid-template-columns:1fr}}
+
+.card{
+  background:#fff;
+  border:1px solid black;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(0,0,0,.05);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 28px rgba(0,0,0,.12)
+}
+.card-body{
+  padding:18px;
+}
+.card-body p {
+  text-align: center;
+  max-width: 90%;
+  margin: 0.5rem auto 1rem;
+}
+.card-body .btn {
+  margin-top: 18px; 
+}
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  list-style:none;
+  padding:0;
+  margin:12px 0 16px
+}
+.tags li{
+  border:1px solid var(--border);
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:.85rem;
+  color:#333
+}
+.suite-title-btn{
+  display:inline-block;
+  background:var(--brand);
+  color:#000;
+  padding:10px 24px;
+  border-radius:999px;
+  font-weight:400;
+  font-size:1.1rem;
+  letter-spacing:0.5px;
+  transition:transform .15s ease,background .4s ease;
+}
+.suite-title-btn:hover{
+  transform:translateY(-2px);
+  color:#000;
+  background: #e2cdb4;
+  text-decoration-line:underline
+}
+
+
+
+
+
+/* -------- Amenities -------- */
+#amenities.section {
+  padding: 40px 0 50px; /* less vertical space */
+  background: linear-gradient(to bottom right, #faf8f5, #f6f1ea);
+}
+
+#amenities .h2 {
+  text-align: center;
+  margin-bottom: 6px;
+  font-size: 1.9rem;
+}
+
+#amenities .sub {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 26px;
+  color: #4b4b4b;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+/* Compact luxury grid */
+.amenities.luxury-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  justify-items: center;
+}
+
+/* Compact amenity tile */
+.amenity {
+  background: linear-gradient(180deg, #e8dccf 0%, #f8f5f0 60%, #ffffff 100%);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 14px;
+  padding: 12px 10px;
+  text-align: center;
+  color: #2a2a2a;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+.amenity:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.amenity span {
+  font-size: 22px;
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+
+.amenity p {
+  margin: 0;
+  line-height: 1.3;
+}
+
+.amenity small {
+  color: #777;
+  font-size: 0.8em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #amenities.section {
+    padding: 28px 0 40px;
+  }
+
+  .amenities.luxury-grid {
+    gap: 12px;
+  }
+
+  .amenity {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+    border-radius: 12px;
+  }
+
+  .amenity span {
+    font-size: 20px;
+  }
+}
+.amenity i {
+  font-size: 22px;
+  color: var(--brand, #b79d7a); /* matches your beige/gold tone */
+  margin-bottom: 8px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.amenity:hover i {
+  color: #9b8462; /* slightly darker beige on hover */
+  transform: scale(1.08);
+}
+
+
+
+
+
+
+
+/* -------- Modern Luxury Gallery -------- */
+.visual-story {
+  background: linear-gradient(to bottom, #e4d4c4, #faf7f2);
+  padding: 50px 0 60px;
+}
+.visual-story .container.narrow { width: min(860px, 92%); }
+.visual-story .h2 { margin-bottom: 8px; }
+.visual-story .sub { margin-bottom: 24px; color: #4b4b4b; }
+
+/* Responsive luxury grid (auto-fit, consistent rhythm) */
+.vs-row.lux {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: stretch;
+  padding-inline: min(4vw, 28px);
+}
+
+/* Card */
+.vs-block {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 12px 26px rgba(0,0,0,.08);
+  transform: translateY(24px) scale(0.985);
+  opacity: 0;
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease,
+    box-shadow 0.35s ease;
+  will-change: opacity, transform;
+  transition-delay: var(--d, 0s);   /* stagger support */
+}
+.vs-block.in-view {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Image */
+.vs-block img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;          /* editorial look on desktop */
+  aspect-ratio: 4 / 5;        /* tall, magazine feel */
+  transform: scale(1);
+  transition: transform 1.2s cubic-bezier(.25,.1,.25,1);
+}
+.vs-block:hover img {
+  transform: scale(1.035);    /* subtle luxury zoom */
+}
+
+/* Caption chip */
+.vs-block figcaption {
+  position: absolute;
+  left: 14px; bottom: 12px;
+  color: #1a1a1a;
+  background: rgba(255,255,255,.78);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0,0,0,.06);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: .92rem;
+  letter-spacing: .2px;
+  transform: translateY(6px);
+  opacity: .0;
+  transition: opacity .5s ease, transform .5s ease;
+}
+.vs-block:hover figcaption {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Compact, elegant spacing on small screens + show full photos */
+@media (max-width: 640px){
+  .visual-story { padding: 36px 0 44px; }
+  .vs-row.lux { gap: 14px; }
+
+  /* show the whole image on mobile — no cropping */
+  .vs-block img {
+    aspect-ratio: auto;
+    height: auto;
+    object-fit: contain;
+    background: #000;        /* tasteful letterbox behind landscape shots */
+  }
+
+  .vs-block { border-radius: 14px; }
+  .vs-block figcaption {
+    font-size: .88rem;
+    left: 10px; bottom: 10px;
+  }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce){
+  .vs-block, .vs-block img, .vs-block figcaption { transition: none !important; }
+}
+
+
+
+
+
+
+
+
+/* --- Modern Luxury Masonry --- */
+.vs-row.masonry {
+  column-count: 3;
+  column-gap: 18px;
+  padding-inline: min(4vw, 28px);
+}
+@media (max-width:1000px){ .vs-row.masonry{ column-count:2; } }
+@media (max-width:640px){ .vs-row.masonry{ column-count:1; } }
+
+/* each figure acts like a flowing tile */
+.vs-row.masonry .vs-block {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 18px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  transform: translateY(24px);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+  will-change: opacity, transform;
+}
+.vs-row.masonry .vs-block.in-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.vs-row.masonry img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 1.2s cubic-bezier(.25,.1,.25,1);
+}
+.vs-row.masonry .vs-block:hover img {
+  transform: scale(1.03);
+}
+
+/* Caption chip */
+.vs-row.masonry figcaption {
+  position: absolute;
+  left: 14px; bottom: 12px;
+  background: rgba(255,255,255,.8);
+  backdrop-filter: blur(6px);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: .9rem;
+  color: #1a1a1a;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.vs-row.masonry .vs-block:hover figcaption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vs-row.masonry .vs-block img { border-radius: 18px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Location (Modern Luxury)
+   ========================= */
+
+/* Section container */
+#location.section {
+  /* compact, elegant spacing */
+  padding: 60px 0 80px;
+  background: linear-gradient(to top, #e8dccf 0%, #f8f5f0 60%, #ffffff 100%);
+
+}
+
+#location.section {
+  background: linear-gradient(to top, #e8dccf 0%, #f8f5f0 60%, #ffffff 100%);
+  padding: 60px 0 80px;
+}
+.map-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  padding: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+/* Make Google Maps button transparent on hover */
+#location .cta .btn:hover {
+  background: transparent;
+  color: #000;
+  border: 1.5px solid #000;
+  box-shadow: none;
+}
+#location .cta .btn.ghost:hover {
+  background: #000;
+  color: white;
+}
+
+/* Theme background for the section */
+.lux-location {
+  background: linear-gradient(to top, #e8dccf 0%, #f8f5f0 60%, #ffffff 100%);
+}
+
+/* Split layout */
+.lux-location .grid-2 {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+/* Copy side */
+.loc-copy .h2 {
+  margin-bottom: 6px;
+  text-align: left;
+}
+.loc-copy .sub {
+  color: #444;
+  margin-bottom: 14px;
+  max-width: 520px;
+}
+.loc-address {
+  margin: 6px 0 16px;
+  font-style: normal;
+  color: #2a2a2a;
+}
+.loc-points { margin-top: 16px; }
+.loc-points li { margin: 8px 0; color: #3a3a3a; }
+
+/* CTA buttons centered */
+#location .cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+/* Map card container */
+.map-card { position: relative; }
+
+/* Frosted map wrapper (single source of truth) */
+.mapwrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.06);
+  background: rgba(255,255,255,.65);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 14px 36px rgba(0,0,0,.10);
+  transition: transform .5s ease, box-shadow .5s ease;
+}
+.map-card:hover .mapwrap {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 44px rgba(0,0,0,.12);
+}
+
+/* Map content (iframe) */
+.mapwrap iframe {
+  width: 100%;
+  height: 440px;
+  border: 0;
+  filter: grayscale(20%) contrast(1.05) brightness(1.05) saturate(0.95);
+  transition: filter .6s ease;
+}
+.map-card:hover iframe {
+  filter: none;
+}
+
+/* Branded badge overlay */
+.map-badge {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.9);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,.10);
+}
+.map-badge .dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 0 3px rgba(183,157,122,.18);
+}
+.map-badge strong { display:block; line-height: 1; color:#1a1a1a; }
+.map-badge small  { display:block; color:#666; margin-top: 2px; }
+
+/* Optional: map canvas class (kept for compatibility) */
+.lux-map {
+  width: 100%;
+  height: 440px;
+  border: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 900px) {
+  #location.section { padding: 40px 0 60px; }
+
+  .lux-location .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .loc-copy .h2,
+  .loc-copy .sub {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .loc-copy .cta { justify-content: center; }
+
+  .mapwrap iframe,
+  .lux-map {
+    height: 360px;
+  }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .mapwrap, .mapwrap iframe { transition: none !important; }
+}
+/* Two-column layout for location highlights */
+.loc-points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 24px; /* space between rows and columns */
+  margin-top: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Style individual items */
+.loc-points li {
+  color: #3a3a3a;
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.97rem;
+  line-height: 1.6;
+}
+
+/* Custom subtle checkmark */
+.loc-points li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--brand);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* On smaller screens, go back to one column */
+@media (max-width: 600px) {
+  .loc-points {
+    grid-template-columns: 1fr;
+  }
+}
+
+#location.section {
+  background: linear-gradient(to top, #e8dccf 0%, #f8f5f0 60%, #ffffff 100%);
+  padding: 60px 0 80px;
+}
+
+
+
+
+
+/* =========================
+   Contact — Modern Luxury
+   ========================= */
+
+#contact.section {
+  background: linear-gradient(180deg, #e8dccf 0%, #f8f5f0 60%, #ffffff 100%);
+  padding: 70px 0 90px;
+  padding-top: 30px;
+  }
+  
+
+/* Layout */
+#contact .grid-2 {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Left text column */
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#contact p {
+  color: #444;
+  margin-bottom: 20px;
+}
+
+#contact .checks {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+#contact .checks li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+#contact .checks a {
+  color: var(--brand);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#contact .checks a:hover {
+  border-color: var(--brand);
+  color: #000;
+}
+
+/* =========================
+   Luxe Form (Soho Suites)
+   ========================= */
+
+/* Card */
+.form {
+  --card-bg: rgba(255,255,255,0.72);
+  --card-br: 18px;
+  --ring: 0 0 0 6px rgba(183,157,122,0.10);
+  --shadow: 0 18px 40px rgba(0,0,0,0.10);
+  --shadow-hover: 0 24px 60px rgba(0,0,0,0.12);
+
+  background: linear-gradient(180deg, var(--card-bg), rgba(255,255,255,0.78));
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-radius: var(--card-br);
+  border: 1px solid rgba(183,157,122,0.14);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  display: grid;
+  gap: 18px;
+  transition: transform .45s ease, box-shadow .45s ease, border-color .45s ease;
+}
+.form:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(183,157,122,0.22);
+}
+
+/* Field (for floating labels & icons) */
+.field {
+  position: relative;
+  display: grid;
+}
+.field .input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 16px 16px 16px 48px; /* room for icon */
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.92);
+  font: 400 1rem/1.3 inherit;
+  transition: border-color .3s ease, box-shadow .3s ease, background .3s ease, transform .2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.field textarea { min-height: 120px; resize: vertical; }
+.field .input::placeholder,
+.field textarea::placeholder { color: transparent; }
+
+/* Icon slot */
+.field .icon {
+  inset-block: 0;
+  left: 16px;
+  position: absolute;
+  inset: 0 auto 0 16px;
+  display: grid; 
+  place-items: center;
+  width: 22px;
+  height: 100%;
+  pointer-events: none;
+  color: var(--brand);
+  font-size: 1.15rem;
+  opacity: .85;
+}
+
+.field .icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+#suite {
+  color-scheme: light; /* tells Safari to use the light popup style */
+}
+
+
+/* Floating label */
+.field label {
+  position: absolute;
+  left: 48px; top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  padding: 0 6px;
+  font-size: 0.95rem;
+  color: rgba(0,0,0,0.55);
+  letter-spacing: .2px;
+  transition: all .22s ease;
+  pointer-events: none;
+}
+
+/* Focus & filled states */
+.field:has(.input:focus),
+.field:has(textarea:focus),
+.field:has(select:focus) {
+  filter: saturate(1.02);
+}
+.input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: var(--ring);
+  background: #fff;
+  transform: translateY(-1px);
+}
+.input:not(:placeholder-shown) + label,
+textarea:not(:placeholder-shown) + label,
+select:valid + label,
+.input:focus + label,
+textarea:focus + label,
+select:focus + label {
+  top: 0; transform: translateY(-50%) scale(.88);
+  color: var(--brand);
+  background: linear-gradient(180deg, #fff 0%, #fff 60%, transparent 100%);
+}
+
+/* Select arrow */
+.field select {
+  height: 52px;
+  width: 100%;
+  padding: 0 54px 0 50px;
+  border-radius: 14px;
+  border: 1px solid black;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(0,0,0,.45) 50%),
+    linear-gradient(135deg, rgba(0,0,0,.45) 50%, transparent 50%);
+  background-position: calc(100% - 28px) 52%, calc(100% - 20px) 52%;
+  background-size: 8px 8px, 8px 8px;
+  background-repeat: no-repeat;
+}
+
+/* Helper text / errors */
+.help {
+  font-size: .88rem;
+  color: rgba(0,0,0,0.55);
+  margin-top: 6px;
+}
+.field.error .input,
+.field.error textarea,
+.field.error select {
+  border-color: #e76a6a;
+  box-shadow: 0 0 0 6px rgba(231,106,106,0.10);
+}
+.field.error .help { color: #c45353; }
+
+/* Button */
+.form .btn {
+  display: inline-grid;
+  place-items: center;
+  gap: 8px;
+  background: linear-gradient(180deg, #e4d4c4, color-mix(in oklab, var(--brand) 86%, #000 14%));
+  color: #000000;
+  text-decoration-line: underline;
+  font-weight: 400;
+  font-size: large;
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  border: 0;
+  transition: transform .22s ease, box-shadow .3s ease, opacity .2s ease;
+  box-shadow: 0 10px 24px #e4d4c4;
+  background-color: #e4d4c4;
+}
+form .btn:hover {
+  background: #e4d4c4;
+  color: black; /* stays black on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.form .btn:active { transform: translateY(0); }
+.form .btn:disabled { opacity: .6; cursor: not-allowed; box-shadow: none; }
+
+/* Subtle divider (optional for multi-column forms) */
+.form .split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 720px) {
+  .form { padding: 22px; gap: 14px; }
+  .form .split { grid-template-columns: 1fr; }
+  .field .icon { left: 14px; }
+  .field label { left: 44px; }
+}
+
+/* Autofill polish */
+.input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: inherit;
+  box-shadow: 0 0 0 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .form, .form * { transition: none !important; }
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  #contact .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  #contact h2,
+  #contact p,
+  #contact .checks {
+    text-align: center;
+  }
+
+  .form {
+    padding: 24px;
+  }
+}
+
+
+
+
+/* Slim luxury bar */
+.footer {
+  background: linear-gradient(180deg, #e4d4c4 0%, #d6bfa6 100%);
+  color: #000;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+/* 3-column grid: left | center | right */
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;      /* keeps center truly centered */
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;                       /* slim */
+}
+
+/* Left block */
+.footer-left { justify-self: start; line-height: 1.2; }
+.footer-logo { font-weight: 700; font-size: 1rem; margin: 0; }
+.footer-sub  { font-size: .85rem; opacity: .8; margin: 0; }
+
+/* Center title */
+.footer-center {
+  justify-self: center;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: .2px;
+}
+
+/* Right links/icons */
+.footer-right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.footer-right a {
+  color: #000;
+  text-decoration: none;
+  font-size: .95rem;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.footer-right a:hover { opacity: .75; transform: translateY(-1px); }
+
+/* Bottom line (extra slim) */
+.footer-bottom {
+  text-align: center;
+  font-size: .8rem;
+  opacity: .75;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding: 6px 10px;
+}
+
+/* Remove stray margins */
+.footer * { margin-block: 0; }
+
+/* Mobile: stack neatly, still centered */
+@media (max-width: 720px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    row-gap: 6px;
+  }
+  .footer-left, .footer-right { justify-self: center; }
+}
+
+
+
+
+
+
+
+
+
+/* -------- Mobile FAB -------- */
+.book-fab{
+  position:fixed;right:16px;bottom:16px;z-index:60;
+  background:#1a1a1a;color:#fff;padding:12px 18px;border-radius:999px;
+  font-weight:400;box-shadow:0 10px 22px rgba(0,0,0,.2);
+}
+@media(min-width:900px){.book-fab{display:none}}
+
+
+/* ========= Scrolling Experience (sticky frames) ========= */
+.scrolling-experience{
+  position:relative;
+  background:#fff;
+}
+.se-frame{
+  position:relative;
+  height: 100vh;           /* each fills the screen */
+  min-height: 560px;
+  display:grid; place-items:center;
+  overflow:hidden;
+}
+.se-frame img{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  filter: contrast(1.02) saturate(1.02);
+  transform: scale(1.05);
+  transition: transform 1.2s ease;
+}
+.se-frame .se-caption{
+  position:relative; z-index:1; text-align:center; color:#fff;
+  padding: 18px 22px;
+  background: rgba(0,0,0,.30);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 14px;
+}
+.se-caption h3{
+  font-family:"Playfair Display",serif;
+  font-weight:400;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  margin:0 0 .25rem 0;
+}
+.se-caption p{ margin:.25rem 0 0 0; }
+
+/* Subtle zoom-out as frame comes into view */
+.se-frame.in-view img{ transform: scale(1.02); }
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .se-frame img{ transform:none !important; transition:none !important; }
+}
+
+
+.hero-content .cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap; /* allows them to stack on small screens if needed */
+}
+
+
+/* -------- Fade-in Animation -------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s cubic-bezier(0.25, 0.1, 0.25, 1),
+  transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+/* When element becomes visible */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+/* === Soho Suites Custom Dropdown === */
+.custom-select {
+  position: relative;
+  background:#e4d4c4;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #333;
+  cursor: pointer;
+  transition: box-shadow .3s ease, border-color .3s ease;
+}
+.custom-select:hover {
+  border-color: rgba(183,157,122,0.3);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.custom-select .selected::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px; height: 8px;
+  border-right: 2px solid var(--brand);
+  border-bottom: 2px solid var(--brand);
+  transition: transform .2s ease;
+}
+.custom-select.open .selected::after {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.custom-select .options {
+  position: absolute;
+  left: 0; right: 0;
+  top: 100%;
+  margin-top: 6px;
+  background: #e4d4c4;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  list-style: none;
+  padding: 8px 0;
+  display: none;
+  z-index: 20;
+}
+.custom-select.open .options { display: block; }
+
+.custom-select .options li {
+  padding: 10px 18px;
+  transition: background .2s ease, color .2s ease;
+}
+.custom-select .options li:hover {
+  background: rgba(183,157,122,0.1);
+  color: var(--brand);
+}
+
+
+/* Make the ☰ menu icon visible on the home page */
+header.nav.on-hero .burger {
+  color: black !important;      /* white icon on dark hero background */
+  z-index: 100 !important;     /* stay above hero image */
+  display: block !important;   /* force visible */
+  position: relative;          /* keeps alignment */
+}
+
+
+/* Let taps go through the dark backdrop so the ☰ button can be clicked again */
+.nav.is-open::after {
+  pointer-events: none !important;
+}
+
+.custom-select{ position: relative; }
+.custom-select .options{ position: absolute; left: 0; right: 0; z-index: 400; display: none; }
+.custom-select .options.open{ display: block; }
+
+
+
+/* --- Contact page offset --- */
+body.contact-page #contact.section {
+  padding-top: 130px; /* adds space below the nav */
+}
+
+
+
+/* Force-correct burger visibility and reset default button look */
+.burger {
+  display: none !important;          /* desktop: never show */
+  background: none !important;       /* kill white square */
+  border: 0 !important;
+  padding: 0;                         /* no default button padding */
+  appearance: none;                   /* extra safety */
+}
+
+/* Mobile only: show and style the burger */
+@media (max-width: 880px){
+  .burger{
+    display: block !important;
+    width: 30px; height: 22px;
+    position: relative;
+    cursor: pointer;
+  }
+  .burger span{
+    position: absolute; left: 0; right: 0;
+    height: 2px; border-radius: 1px;
+    background: #1a1a1a;
+    transition: all .35s ease;
+  }
+  .burger span:nth-child(1){ top: 0; }
+  .burger span:nth-child(2){ top: 10px; }
+  .burger span:nth-child(3){ top: 20px; }
+
+  /* X animation when nav has .is-open (your JS already toggles this) */
+  .nav.is-open .burger span:nth-child(1){ transform: translateY(10px) rotate(45deg); }
+  .nav.is-open .burger span:nth-child(2){ opacity: 0; }
+  .nav.is-open .burger span:nth-child(3){ transform: translateY(-10px) rotate(-45deg); }
+}
+
+/* Right-align desktop nav items (all pages) */
+@media (min-width: 881px){
+  .menu { 
+    margin-left: auto;   /* pushes the menu to the right edge */
+  }
+}
+
+
+
+
+/* === Deluxe Suite — Modern Luxury (no image) === */
+#deluxe-amenities.section {
+  background: linear-gradient(180deg, #f8f6f3 0%, #fdfcfb 55%, #ffffff 100%);
+  padding: 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle, premium glow */
+#deluxe-amenities::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(80% 50% at 50% -10%, rgba(214,191,166,0.12), transparent 60%),
+    radial-gradient(40% 30% at 95% 10%, rgba(214,191,166,0.09), transparent 60%);
+  pointer-events: none;
+}
+
+/* Centered, narrow content */
+#deluxe-amenities .deluxe-wrap {
+  width: min(900px, 92%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Heading & lead */
+#deluxe-amenities .deluxe-head .h2 {
+  margin-bottom: 8px;
+  letter-spacing: .2px;
+}
+#deluxe-amenities .deluxe-head .lead {
+  color: #4a4a4a;
+  max-width: 680px;
+  margin: 0 auto 22px;
+}
+
+/* Elegant highlight chips */
+#deluxe-amenities .deluxe-chips {
+  display: flex; flex-wrap: wrap;
+  gap: 10px 12px;
+  justify-content: center;
+  list-style: none; padding: 0; margin: 12px auto 22px;
+}
+#deluxe-amenities .deluxe-chips li {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: .95rem;
+  color: #1a1a1a;
+  background: linear-gradient(180deg, #eee6dc, #e4d4c4);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  transition: transform .2s ease, box-shadow .25s ease;
+}
+#deluxe-amenities .deluxe-chips li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+}
+
+/* Refined two-column list */
+#deluxe-amenities .deluxe-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 34px;
+  text-align: left;
+  margin: 18px auto 8px;
+  width: min(900px, 100%);
+}
+#deluxe-amenities .deluxe-list li {
+  border-left: 2px solid rgba(214,191,166,.22);
+  padding-left: 24px;
+  color: #2a2a2a;
+  line-height: 1.6;
+  transition: color .25s ease, transform .2s ease;
+}
+#deluxe-amenities .deluxe-list li:hover { color:#000; transform: translateX(2px); }
+
+/* Keep your existing checkmark style but ensure alignment */
+#deluxe-amenities .deluxe-list li::before {
+  content: "✓";
+  position: absolute;
+  margin-left: -24px;
+  color: var(--brand);
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+/* CTA */
+#deluxe-amenities .cta {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+  margin-top: 26px;
+}
+#deluxe-amenities .btn {
+  font-weight: 500;
+  background: linear-gradient(180deg, #e8dccf 0%, #d6bfa6 100%);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+#deluxe-amenities .btn:hover {
+  background: transparent; color:#000; border:1.5px solid #000; box-shadow:none;
+}
+#deluxe-amenities .btn.ghost { background: transparent; border:1.5px solid #000; color:#000; }
+#deluxe-amenities .btn.ghost:hover { background:#000; color:#fff; }
+
+@media (max-width: 600px) {
+  #deluxe-amenities .deluxe-list li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+
+
+
+
+/* === Sauna Suite — Modern Luxury (no image) === */
+#sauna-amenities.section {
+  background: linear-gradient(180deg, #f8f6f3 0%, #fdfcfb 55%, #ffffff 100%);
+  padding: 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle, premium glow */
+#sauna-amenities::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(80% 50% at 50% -10%, rgba(214,191,166,0.12), transparent 60%),
+    radial-gradient(40% 30% at 95% 10%, rgba(214,191,166,0.09), transparent 60%);
+  pointer-events: none;
+}
+
+/* Centered, narrow content */
+#sauna-amenities .sauna-wrap {
+  width: min(900px, 92%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Heading & lead */
+#sauna-amenities .sauna-head .h2 {
+  margin-bottom: 8px;
+  letter-spacing: .2px;
+}
+#sauna-amenities .sauna-head .lead {
+  color: #4a4a4a;
+  max-width: 680px;
+  margin: 0 auto 22px;
+}
+
+/* Elegant highlight chips */
+#sauna-amenities .sauna-chips {
+  display: flex; flex-wrap: wrap;
+  gap: 10px 12px;
+  justify-content: center;
+  list-style: none; padding: 0; margin: 12px auto 22px;
+}
+#sauna-amenities .sauna-chips li {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: .95rem;
+  color: #1a1a1a;
+  background: linear-gradient(180deg, #eee6dc, #e4d4c4);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  transition: transform .2s ease, box-shadow .25s ease;
+}
+#sauna-amenities .sauna-chips li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+}
+
+/* Refined two-column list */
+#sauna-amenities .sauna-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 34px;
+  text-align: left;
+  margin: 18px auto 8px;
+  width: min(900px, 100%);
+}
+#sauna-amenities .sauna-list li {
+  border-left: 2px solid rgba(214,191,166,.22);
+  padding-left: 24px;
+  color: #2a2a2a;
+  line-height: 1.6;
+  transition: color .25s ease, transform .2s ease;
+}
+#sauna-amenities .sauna-list li:hover { color:#000; transform: translateX(2px); }
+
+/* Keep your existing checkmark style but ensure alignment */
+#sauna-amenities .sauna-list li::before {
+  content: "✓";
+  position: absolute;
+  margin-left: -24px;
+  color: var(--brand);
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+/* CTA */
+#sauna-amenities .cta {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+  margin-top: 26px;
+}
+#sauna-amenities .btn {
+  font-weight: 500;
+  background: linear-gradient(180deg, #e8dccf 0%, #d6bfa6 100%);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+#sauna-amenities .btn:hover {
+  background: transparent; color:#000; border:1.5px solid #000; box-shadow:none;
+}
+#sauna-amenities .btn.ghost { background: transparent; border:1.5px solid #000; color:#000; }
+#sauna-amenities .btn.ghost:hover { background:#000; color:#fff; }
+
+
+
+@media (max-width: 600px) {
+  #sauna-amenities .sauna-list li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+
+
+
+/* === Superior Suite — Modern Luxury (no image) === */
+#superior-amenities.section {
+  background: linear-gradient(180deg, #f8f6f3 0%, #fdfcfb 55%, #ffffff 100%);
+  padding: 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle, premium glow */
+#superior-amenities::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(80% 50% at 50% -10%, rgba(214,191,166,0.12), transparent 60%),
+    radial-gradient(40% 30% at 95% 10%, rgba(214,191,166,0.09), transparent 60%);
+  pointer-events: none;
+}
+
+/* Centered, narrow content */
+#superior-amenities .superior-wrap {
+  width: min(900px, 92%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Heading & lead */
+#superior-amenities .superior-head .h2 {
+  margin-bottom: 8px;
+  letter-spacing: .2px;
+}
+#superior-amenities .superior-head .lead {
+  color: #4a4a4a;
+  max-width: 680px;
+  margin: 0 auto 22px;
+}
+
+/* Elegant highlight chips */
+#superior-amenities .superior-chips {
+  display: flex; flex-wrap: wrap;
+  gap: 10px 12px;
+  justify-content: center;
+  list-style: none; padding: 0; margin: 12px auto 22px;
+}
+#superior-amenities .superior-chips li {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: .95rem;
+  color: #1a1a1a;
+  background: linear-gradient(180deg, #eee6dc, #e4d4c4);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  transition: transform .2s ease, box-shadow .25s ease;
+}
+#superior-amenities .superior-chips li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+}
+
+/* Refined two-column list */
+#superior-amenities .superior-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 34px;
+  text-align: left;
+  margin: 18px auto 8px;
+  width: min(900px, 100%);
+}
+#superior-amenities .superior-list li {
+  border-left: 2px solid rgba(214,191,166,.22);
+  padding-left: 24px;
+  color: #2a2a2a;
+  line-height: 1.6;
+  transition: color .25s ease, transform .2s ease;
+}
+#superior-amenities .superior-list li:hover { color:#000; transform: translateX(2px); }
+
+/* Keep your existing checkmark style but ensure alignment */
+#superior-amenities .superior-list li::before {
+  content: "✓";
+  position: absolute;
+  margin-left: -24px;
+  color: var(--brand);
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+/* CTA */
+#superior-amenities .cta {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+  margin-top: 26px;
+}
+#superior-amenities .btn {
+  font-weight: 500;
+  background: linear-gradient(180deg, #e8dccf 0%, #d6bfa6 100%);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+#superior-amenities .btn:hover {
+  background: transparent; color:#000; border:1.5px solid #000; box-shadow:none;
+}
+#superior-amenities .btn.ghost { background: transparent; border:1.5px solid #000; color:#000; }
+#superior-amenities .btn.ghost:hover { background:#000; color:#fff; }
+
+
+
+@media (max-width: 600px) {
+  #superior-amenities .superior-list li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+
+
+
+/* ===== Thank You (Modern Luxury) ===== */
+.thanks {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 80px 16px;
+  background: linear-gradient(180deg, #e8dccf 0%, #f8f5f0 60%, #ffffff 100%);
+}
+.thanks-card {
+  max-width: 720px;
+  width: min(720px, 92%);
+  text-align: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.9));
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.10);
+  padding: 36px 24px 28px;
+}
+.thanks-badge {
+  width: 58px; height: 58px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: #e4d4c4;
+  color: #000;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.thanks .cta {
+  margin-top: 14px;
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+}
+.thanks-note {
+  display: block;
+  margin-top: 14px;
+  color: #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thank you — Soho Suites</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.png">
+</head>
+<body>
+
+  <!-- Minimal header (optional) -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Soho Suites"></a>
+      <nav class="menu">
+        <a href="index.html#about">About</a>
+        <a href="deluxe.html">Deluxe Suite</a>
+        <a href="sauna.html">Sauna Suite</a>
+        <a href="superior.html">Superior Suite</a>
+        <a class="btn" href="index.html#contact">Contact</a>
+      </nav>
+      <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- Thank You -->
+  <section class="thanks">
+    <div class="thanks-card">
+      <div class="thanks-badge" aria-hidden="true">✓</div>
+      <h1 class="display">Thank you</h1>
+      <p class="lead center">We’ve received your enquiry. We’ll reply shortly.</p>
+
+      <div class="cta">
+        <a class="btn" href="index.html">Back to Home</a>
+        <a class="btn ghost" href="index.html#suites">Explore Suites</a>
+        <a class="btn ghost" href="https://wa.me/38971225555" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+
+      <small class="thanks-note">You’ll be redirected to the homepage in a few seconds.</small>
+    </div>
+  </section>
+
+  <script>
+    // Mobile menu toggle (same as other pages)
+    const burger = document.querySelector('.burger');
+    const menu   = document.querySelector('.menu');
+    const nav    = document.querySelector('.nav');
+    const body   = document.body;
+    if (burger){
+      burger.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        body.style.overflow = open ? 'hidden' : '';
+        nav.classList.toggle('is-open', open);
+      });
+      menu.addEventListener('click', (e) => {
+        if (e.target.closest('a')) {
+          menu.classList.remove('open'); nav.classList.remove('is-open'); body.style.overflow = '';
+          burger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Gentle auto-redirect (remove if you don't want it)
+    setTimeout(() => { window.location.href = 'index.html'; }, 6000);
+  </script>
+</body>
+</html>
