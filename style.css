@@ -533,8 +533,9 @@ header.nav.on-hero .burger span{
   position:relative; z-index:2;   /* above overlays */
   color:#000000;
   text-shadow:
-    0 1px 0 rgba(255,255,255,.25),   /* tiny light edge */
-    0 8px 28px rgba(0,0,0,.45);      /* soft glow */
+    0 2px 4px #e4d4c4,   /* slightly brighter edge */
+    0 12px 36px rgba(0,0,0,0.55),       /* stronger, wider shadow */
+    0 20px 48px rgba(0,0,0,0.35);       /* deep outer glow */
 }
 
 .hero .display {
@@ -542,7 +543,8 @@ header.nav.on-hero .burger span{
   font-weight: 600;
   font-size: 4rem;      /* main brand name */
   line-height: 1.05;
-  letter-spacing: 0.4px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
   color: #000000;
   margin-bottom: 0.2em;
 }
@@ -550,7 +552,7 @@ header.nav.on-hero .burger span{
 .hero h2 {
   font-family: "Playfair Display", serif;
   font-weight: 400;
-  font-size: 1.5rem;      /* smaller, refined */
+  font-size: 2rem;      /* smaller, refined */
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #e4d4c4;
@@ -637,9 +639,16 @@ header.nav.on-hero .burger span{
 /* Make hero title bigger on mobile screens */
 @media (max-width: 768px) {
   .hero .display {
-    font-size: 1.6rem;   /* bigger than before for phones */
+    font-size: 2rem;   /* bigger than before for phones */
     line-height: 1.1;    /* keeps elegant proportions */
     font-weight: 600;    /* strong but still classy */
+  }
+
+  .hero h2{
+    font-size: 1.5rem;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    margin-top: .2rem;
   }
 }
 
