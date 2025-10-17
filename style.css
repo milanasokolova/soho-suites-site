@@ -2300,3 +2300,73 @@ body.contact-page #contact.section {
 
 
 
+
+
+
+/* Deluxe/Superior/Sauna: mobile checkmark alignment fix */
+@media (max-width: 768px){
+  /* add a tiny gutter so items don’t touch the edge */
+  .deluxe-list, .superior-list, .sauna-list, .checks{
+    padding-inline: 10px;           /* space on both sides */
+  }
+
+  .checks{
+    grid-template-columns: 1fr 1fr; /* keep two columns */
+    column-gap: 14px;
+    row-gap: 10px;
+  }
+
+  .checks li{
+    position: relative;
+    padding: .7rem .25rem .7rem 1.8rem; /* room for the tick at left */
+  }
+
+  .checks li::before{
+    left: .25rem;                   /* was too far left; pull it in */
+    top: .2rem;
+    content: "✓";
+    position: absolute;
+    font-weight: 700;
+    opacity: .7;
+  }
+}
+
+
+
+
+
+
+/* --- Two-column highlight chips on mobile (all suites) --- */
+@media (max-width: 768px) {
+  .deluxe-chips,
+  .superior-chips,
+  .sauna-chips {
+    display: grid !important;              /* override any flex styles */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 10px;
+    justify-items: center;
+    padding: 0 10px;
+  }
+
+  .deluxe-chips li,
+  .superior-chips li,
+  .sauna-chips li {
+    width: 100%;
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 10px 8px;
+    border-radius: 30px;
+    line-height: 1.3;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
