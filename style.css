@@ -642,6 +642,7 @@ header.nav.on-hero .burger span{
     font-size: 2rem;   /* bigger than before for phones */
     line-height: 1.1;    /* keeps elegant proportions */
     font-weight: 600;    /* strong but still classy */
+    text-transform: uppercase;
   }
 
   .hero h2{
@@ -920,6 +921,7 @@ header.nav.on-hero .burger span{
   font-size: 0.8em;
 }
 
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   #amenities.section {
@@ -928,6 +930,7 @@ header.nav.on-hero .burger span{
 
   .amenities.luxury-grid {
     gap: 12px;
+    grid-template-columns: repeat(2, 1fr); /* always 2 columns */
   }
 
   .amenity {
