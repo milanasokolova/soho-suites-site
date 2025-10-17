@@ -614,7 +614,7 @@ header.nav.on-hero .burger span{
 /* Make hero title bigger on mobile screens */
 @media (max-width: 768px) {
   .hero .display {
-    font-size: 1.8rem;   /* bigger than before for phones */
+    font-size: 1.6rem;   /* bigger than before for phones */
     line-height: 1.1;    /* keeps elegant proportions */
     font-weight: 600;    /* strong but still classy */
   }
@@ -810,6 +810,11 @@ header.nav.on-hero .burger span{
   text-decoration-line:underline
 }
 
+.card, .photo-frame {
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  border: 1px solid rgba(0,0,0,.06);
+}
 
 
 
