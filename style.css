@@ -532,7 +532,25 @@ header.nav.on-hero .burger span{
     0 8px 28px rgba(0,0,0,.45);      /* soft glow */
 }
 
+.hero .display {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 4rem;      /* main brand name */
+  line-height: 1.05;
+  letter-spacing: 0.4px;
+  color: #000000;
+  margin-bottom: 0.2em;
+}
 
+.hero h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 1.5rem;      /* smaller, refined */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #e4d4c4;
+  margin-top: -0.4em;     /* tucks closer to H1 for design harmony */
+}
 
 /* --- Mobile: make text sit on the actual picture --- */
 @media (max-width: 768px){
