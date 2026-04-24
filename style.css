@@ -255,7 +255,12 @@ em { font-style: italic; }
   flex-shrink: 0;
 }
 .burger span {
-  display: block; height: 2px; background: var(--white);
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  flex-shrink: 0;
   transition: all .4s var(--ease);
 }
 .burger span:nth-child(2) { width: 65%; }
