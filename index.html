@@ -1,714 +1,305 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Soho Suites — Skopje Center</title>
-  <meta name="description" content="Soho Suites — three boutique apartments in Skopje Center. Minimalist luxury, premium linens, sauna suite, steps from Macedonia Square." />
-  <!-- Font Awesome for clean, professional icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
-  <!-- Open Graph for rich shares -->
-  <meta property="og:title" content="Soho Suites — Skopje Center">
-  <meta property="og:description" content="Minimalist luxury apartments steps from Macedonia Square.">
-  <meta property="og:image" content="images/Main Photo1.jpg">
-  <meta property="og:type" content="website">
-
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/favicon.png">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>Soho Suites — Skopje City Centre</title>
+  <meta name="description" content="Soho Suites — three boutique luxury apartments in Skopje Center. Minimalist elegance, premium linens, private sauna suite, steps from Macedonia Square."/>
+  <meta property="og:title" content="Soho Suites — Skopje City Centre"/>
+  <meta property="og:description" content="Minimalist luxury apartments steps from Macedonia Square."/>
+  <meta property="og:image" content="images/superior/main-photo1.jpg"/>
+  <meta property="og:type" content="website"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="images/favicon.png"/>
 </head>
+<body>
 
-<body class="home-page">
-  <!-- Top bar / nav -->
-  <header class="nav on-hero">
-    <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="Soho Suites">
-        <!--<img src="images/logo.png" alt="Soho Suites" width="180" height="40" decoding="async">* -->
-      </a>
-      <nav class="menu">
-        <a href="#about"class="active">About</a>
-        <a href="deluxe.html">Deluxe Suite</a>
-        <a href="sauna.html">Sauna Suite</a>
-        <a href="superior.html">Superior Suite</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <button class="burger" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>      
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><img class="logo-white" src="logo-white.png" alt="Soho Suites"><img class="logo-dark" src="logo-dark.png" alt="Soho Suites"></a>
+    <nav class="nav-links">
+      <a href="#about" class="active">About</a>
+      <a href="deluxe.html">Deluxe</a>
+      <a href="sauna.html">Sauna Suite</a>
+      <a href="superior.html">Superior</a>
+    </nav>
+    <a class="nav-book" href="contact.html">Book Now</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile nav panel -->
+<nav class="nav-panel" aria-label="Mobile navigation">
+  <a href="#about">About</a>
+  <a href="deluxe.html">Deluxe Suite</a>
+  <a href="sauna.html">Sauna Suite</a>
+  <a href="superior.html">Superior Suite</a>
+  <a href="contact.html" class="nav-panel-book">Book Your Stay</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-media">
+    <img src="images/superior/main-photo1.jpg" alt="Soho Suites — luxury interior in Skopje City Centre" fetchpriority="high" decoding="async"/>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content container">
+    <p class="eyebrow">Skopje City Centre</p>
+    <img class="hero-logo" src="logo-white.png" alt="Soho Suites"/>
+    <p class="lead lead--light">Three boutique apartments. Refined design, hotel-grade comfort — steps from Macedonia Square.</p>
+    <div class="hero-cta">
+      <a class="btn btn--outline-light" href="#suites">Explore Suites</a>
+      <a class="btn btn--gold" href="contact.html">Book Your Stay</a>
     </div>
-  </header>
-
-
-  <!-- Hero -->
-  <section id="home" class="hero fade-in">
-    <div class="hero-media">
-      <!-- Replace with your photo: ~1920x1080 recommended -->
-      <img src="images/superior/main-photo1.jpg" alt="Soho Suites — minimalist luxury interior in Skopje Center" fetchpriority="high" decoding="async">
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content container">
-      <h1 class="display">Soho Suites</h1>
-      <h2>Skopje City Centre</h2>
-      <!--<p class="lead">
-        Three boutique apartments steps from Macedonia Square. Calm tones, crisp linens, curated details — and a private 
-        <a href="sauna.html" class="suite-link"><strong>Sauna Suite</strong></a>.
-      </p>-->
-      
-      <div class="cta">
-        <a class="btn hero-btn" href="#suites">Explore Suites</a>
-        <a class="btn ghost" href="contact.html">Book Your Stay</a>
-      </div>
-    </div>
-  </section>
-
-
-<!-- About -->
-<section id="about" class="section section-muted fade-in">
-  <div class="container grid-2">
-    <div>
-      <h2 class="h2">About Soho Suites</h2>
-      <p class="lead">
-        In the very heart of Skopje City Centre, Soho Suites blends warm minimalism with hotel-grade comfort.
-        Calm whites and beiges, natural textures, and curated details create a refined stay for business or leisure.
-      </p>
-
-      <ul class="checks" aria-label="Key highlights of Soho Suites">
-        <li>Prime location — <strong>2 minutes</strong> from Macedonia Square</li>
-        <li>Premium bedding, cotton linens &amp; blackout curtains</li>
-        <li>Fast Wi-Fi, Smart TV</li>
-        <li>Signature <strong>Sauna Suite</strong> with Finnish dry sauna</li>
-      </ul>
-    </div>
-
-    <div class="about-photo">
-      <img
-        src="images/deluxe/bedroom2-1.jpg"
-        alt="Soho Suites — calm, beige-toned bedroom with premium linen"
-        loading="lazy"
-        decoding="async"
-      >
-    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
   </div>
 </section>
 
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Deluxe Suite</span><span class="sep">✦</span>
+    <span>Sauna Suite</span><span class="sep">✦</span>
+    <span>Superior Suite</span><span class="sep">✦</span>
+    <span>Skopje City Centre</span><span class="sep">✦</span>
+    <span>Private Finnish Sauna</span><span class="sep">✦</span>
+    <span>Hotel-Grade Comfort</span><span class="sep">✦</span>
+    <span>Premium Linen</span><span class="sep">✦</span>
+    <span>Steps from Macedonia Square</span><span class="sep">✦</span>
+    <span>Deluxe Suite</span><span class="sep">✦</span>
+    <span>Sauna Suite</span><span class="sep">✦</span>
+    <span>Superior Suite</span><span class="sep">✦</span>
+    <span>Skopje City Centre</span><span class="sep">✦</span>
+    <span>Private Finnish Sauna</span><span class="sep">✦</span>
+    <span>Hotel-Grade Comfort</span><span class="sep">✦</span>
+    <span>Premium Linen</span><span class="sep">✦</span>
+    <span>Steps from Macedonia Square</span><span class="sep">✦</span>
+  </div>
+</div>
 
-
-
-
-  <!-- Suites -->
-  <section id="suites" class="section section-muted compact fade-in">
-    <div class="container">
-      <h2 class="h2 center">Our Suites</h2>
-      <p class="center sub">Three exclusive apartments blending timeless design with modern serenity.</p>
-  
-      <div class="cards">
-        <article class="card">
-          <img src="images/deluxe/main-photo2.jpg" alt="Deluxe Suite — living area" loading="lazy" decoding="async">
-          <div class="card-body center">
-            <a href="deluxe.html" class="suite-title-btn">Explore Deluxe Suite</a>
-            <p>55m² of refined comfort — two elegant bedrooms, a stylish living area, a modern kitchen with dining space, and a bathroom with premium toiletries</p>
-            <ul class="tags">
-              <li>Two Queen Beds</li><li>Fully Equipped Kitchen & Dining Area</li><li>Hotel-Quality Toiletries</li><li>Workspace</li>
-            </ul>
-            <a class="btn small" href="contact.html">Book now</a>
-          </div>
-        </article>
-  
-        <article class="card">
-          <img src="images/sauna/sauna9.jpg" alt="Sauna Suite — private sauna" loading="lazy" decoding="async">
-          <div class="card-body center">
-            <a href="sauna.html" class="suite-title-btn">Explore Sauna Suite</a>
-            <p>45m² luxury retreat featuring a private sauna, elegant bedroom, open living and dining area, modern kitchen, and bathroom with premium toiletries</p>
-            <ul class="tags">
-              <li>Private Sauna</li><li>One Queen Bed</li><li>Fully Equipped Kitchen & Dining Area</li><li>Hotel-Quality Toiletries</li><li>Workspace</li>
-            </ul>
-            <a class="btn small" href="contact.html">Book now</a>
-          </div>
-        </article>
-  
-        <article class="card">
-          <img src="images/superior/main-photo1.jpg" alt="Superior Suite — living area" loading="lazy" decoding="async">
-          <div class="card-body center">
-            <a href="superior.html" class="suite-title-btn">Explore Superior Suite</a>
-            <p>60m² of refined comfort — two elegant bedrooms, a stylish living area, a modern kitchen with dining space, and a bathroom with premium toiletries</p>
-            <ul class="tags">
-              <li>Two Queen Beds</li><li>Fully Equipped Kitchen & Dining Area</li><li>Hotel-Quality Toiletries</li><li>Workspace</li>
-            </ul>
-            <a class="btn small" href="contact.html">Book now</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-  
-
-<!-- Amenities -->
-<section id="amenities" class="section fade-in">
+<!-- ABOUT -->
+<section id="about" class="section section--white">
   <div class="container">
-    <h2 class="h2 center">Amenities</h2>
-    <p class="center sub">
-      Each Soho Suite is designed for elevated comfort, combining hotel-grade amenities
-      with the privacy and warmth of a boutique residence.
-    </p>
-
-    <div class="amenities luxury-grid">
-      <div class="amenity"><i class="fa-solid fa-location-dot"></i><p>Central Location — Steps from Macedonia Square</p></div>
-      <div class="amenity"><i class="fa-solid fa-bed"></i><p>Premium Linen & Towels</p></div>
-      <div class="amenity"><i class="fa-solid fa-soap"></i><p>Hotel-Quality Toiletries</p></div>
-      <div class="amenity"><i class="fa-solid fa-spa"></i><p>Private Sauna (available in one suite)</p></div>
-      <div class="amenity"><i class="fa-solid fa-mug-saucer"></i><p>Fully Equipped Kitchen</p></div>
-      <div class="amenity"><i class="fa-solid fa-wifi"></i><p>High-Speed Wi-Fi  </p></div>
-      <div class="amenity"><i class="fa-solid fa-tv"></i><p>Smart TV & Streaming Access</p></div>
-      <div class="amenity"><i class="fa-solid fa-lightbulb"></i><p>Elegant Vanity & Lighting</p></div>
-      <div class="amenity"><i class="fa-solid fa-shuttle-van"></i><p>Airport Shuttle Service <small>(available upon request)</small></p></div>
-      <div class="amenity"><i class="fa-solid fa-square-parking"></i><p>Nearby Parking Options <small>paid</small></p></div>
-      <div class="amenity"><i class="fa-solid fa-briefcase"></i><p>Workspace for Business Travel</p></div>
-      <div class="amenity"><i class="fa-solid fa-mug-hot"></i><p>Complimentary Coffee & Tea Selection</p></div>
-      <div class="amenity"><i class="fa-solid fa-shirt"></i><p>In-Suite Ironing Station</p></div>
-      <div class="amenity"><i class="fa-solid fa-wind"></i><p>Professional Hairdryer (Valera Swiss)</p></div>
-      <div class="amenity"><i class="fa-solid fa-shoe-prints"></i><p>Complimentary Slippers</p></div>
-      <div class="amenity"><i class="fa-solid fa-bottle-droplet"></i><p>Luxury Bath Essentials</p></div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Gallery -->
-<section id="story" class="visual-story section fade-in">
-  <div class="container narrow">
-    <h2 class="h2 center">Soho Suites Gallery</h2>
-    <p class="center sub">Calm textures, softened light, and modern serenity—right in Skopje Centre.</p>
-  </div>
-
-  <!-- add class "lux" -->
-  <div class="vs-row lux masonry">
-    <figure class="vs-block">
-      <img src="images/sauna/sauna1.jpg" alt="Warm living room, layered neutrals">
-      <figcaption>Sauna Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/superior/bedroom1-6.jpg" alt="Private Finnish sauna">
-      <figcaption>Superior Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/deluxe/bedroom2-1.jpg" alt="Refined bedroom with premium linen">
-      <figcaption>Deluxe Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/deluxe/kitchen2.jpg" alt="Minimal kitchen and coffee corner">
-      <figcaption>Deluxe Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/superior/bedroom2-1.jpg" alt="Minimal kitchen and coffee corner">
-      <figcaption>Superior Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/superior/bedroom1-2.jpg" alt="Minimal kitchen and coffee corner">
-      <figcaption>Superior Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/superior/bedroom2-6.jpg" alt="Minimal kitchen and coffee corner">
-      <figcaption>Superior Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/superior/kitchen2.jpg" alt="Minimal kitchen and coffee corner">
-      <figcaption>Superior Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/superior/living-room2.jpg" alt="Minimal kitchen and coffee corner">
-      <figcaption>Superior Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/superior/living-room8.jpg" alt="Minimal kitchen and coffee corner">
-      <figcaption>Superior Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/superior/toilet1.jpg" alt="Minimal kitchen and coffee corner">
-      <figcaption>Superior Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/sauna/sauna11.jpg" alt="Warm living room, layered neutrals">
-      <figcaption>Sauna Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/sauna/living-room1.jpg" alt="Warm living room, layered neutrals">
-      <figcaption>Sauna Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/sauna/sauna3.jpg" alt="Warm living room, layered neutrals">
-      <figcaption>Sauna Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/superior/toilet2.jpg" alt="Minimal kitchen and coffee corner">
-      <figcaption>Superior Suite</figcaption>
-    </figure>
-
-    <figure class="vs-block">
-      <img src="images/deluxe/kitchen1.jpg" alt="Warm living room, layered neutrals">
-      <figcaption>Deluxe Suite</figcaption>
-    </figure>
-
-
-  </div>
-</section>
-
-
-
-<!-- Location -->
-<section id="location" class="section compact fade-in lux-location">
-  <div class="container grid-2">
-    <div class="loc-copy">
-      <h2 class="h2">Skopje City Centre</h2>
-      <p class="sub">
-        Steps from Macedonia Square, the river promenade, museums and cafés.
-        Quiet street. Private and central.
-      </p>
-
-      <address class="loc-address">
-        <strong>Soho Suites</strong><br>
-        Vasil Glavinov 14, Skopje
-      </address>
-
-      <div class="cta">
-        <a class="btn" href="https://maps.app.goo.gl/7T9GKRwvYmFTiWUCA?g_st=ipc" target="_blank" rel="noopener">Open in Google Maps</a>
-        <a class="btn ghost" href="https://maps.app.goo.gl/QVhGMmSLvZNiN4n8A" target="_blank" rel="noopener">Apple Maps</a>
+    <div class="about-grid">
+      <div class="about-photo-wrap reveal">
+        <img src="images/deluxe/bedroom2-1.jpg" alt="Soho Suites — calm beige bedroom with premium linen" loading="lazy"/>
+        <div class="about-photo-accent"></div>
       </div>
-
-      <ul class="checks loc-points">
-        <li>2 min — Macedonia Square</li>
-        <li>5 min — Stone Bridge</li>
-        <li>6 min — City Park & cafés</li>
-        <li>10 min — Old Bazaar</li>
-        <li>10 min — Diamond Mall</li>
-        <li>2 min — Marriott Hotel</li>
-      </ul>
+      <div class="about-text">
+        <p class="eyebrow reveal">About Soho Suites</p>
+        <h2 class="h2 reveal reveal-delay-1">Boutique luxury<br><em>in the heart of Skopje</em></h2>
+        <p class="lead reveal reveal-delay-2">In the very heart of Skopje City Centre, Soho Suites blends warm minimalism with hotel-grade comfort. Calm whites and beiges, natural textures, and curated details create a refined stay for business or leisure.</p>
+        <ul class="about-checks reveal reveal-delay-3">
+          <li>2 minutes from Macedonia Square</li>
+          <li>Premium bedding, cotton linens &amp; blackout curtains</li>
+          <li>Fast Wi-Fi &amp; Smart TV in all suites</li>
+          <li>Signature Sauna Suite with Finnish dry sauna</li>
+        </ul>
+        <a class="btn btn--primary reveal reveal-delay-4" href="contact.html">Reserve a Suite</a>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="map-card">
-      <div class="mapwrap">
+<!-- SUITES -->
+<section id="suites" class="section section--dark">
+  <div class="container">
+    <p class="eyebrow reveal" style="justify-content:center;color:var(--sand);--gold:var(--sand);">Our Collection</p>
+    <h2 class="h2 reveal reveal-delay-1" style="text-align:center;color:var(--white);margin-bottom:8px;">Three exclusive suites</h2>
+    <p class="lead reveal reveal-delay-2" style="text-align:center;max-width:520px;margin:0 auto;color:rgba(253,250,246,.45);">Each designed with a distinct character. All sharing the same commitment to excellence.</p>
+  </div>
+  <div class="suites-grid reveal reveal-delay-2">
+    <article class="suite-card">
+      <img src="images/deluxe/main-photo2.jpg" alt="Deluxe Suite — living area" loading="lazy"/>
+      <div class="suite-card-overlay">
+        <span class="suite-card-eyebrow">55 m² · Up to 4 guests</span>
+        <h3>Deluxe Suite</h3>
+        <p>Two elegant bedrooms, stylish living area, modern kitchen and premium bathrooms.</p>
+        <a class="suite-card-link" href="deluxe.html">Explore Suite</a>
+      </div>
+    </article>
+    <article class="suite-card">
+      <img src="images/sauna/sauna9.jpg" alt="Sauna Suite — private Finnish sauna" loading="lazy"/>
+      <div class="suite-card-overlay">
+        <span class="suite-card-eyebrow">45 m² · Up to 3 guests</span>
+        <h3>Sauna Suite</h3>
+        <p>A private Finnish dry sauna, elegant bedroom, open living space and modern kitchen.</p>
+        <a class="suite-card-link" href="sauna.html">Explore Suite</a>
+      </div>
+    </article>
+    <article class="suite-card">
+      <img src="images/superior/main-photo1.jpg" alt="Superior Suite — living area" loading="lazy"/>
+      <div class="suite-card-overlay">
+        <span class="suite-card-eyebrow">65 m² · Up to 4 guests</span>
+        <h3>Superior Suite</h3>
+        <p>Our largest suite. Two bedrooms, spacious living area, full kitchen and refined finishes.</p>
+        <a class="suite-card-link" href="superior.html">Explore Suite</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section id="amenities" class="section section--white">
+  <div class="container">
+    <p class="eyebrow reveal" style="text-align:center;">What's Included</p>
+    <h2 class="h2 reveal reveal-delay-1" style="text-align:center;margin-bottom:8px;">Every detail considered</h2>
+    <p class="lead reveal reveal-delay-2" style="text-align:center;max-width:500px;margin:0 auto;">Hotel-grade amenities with the warmth and privacy of a boutique residence.</p>
+    <div class="amenities-grid reveal reveal-delay-3">
+      <div class="amenity-item"><i class="fa-solid fa-location-dot"></i><p>Central Location — Steps from Macedonia Square</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-bed"></i><p>Premium Linen &amp; Hotel Towels</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-soap"></i><p>Hotel-Quality Toiletries</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-spa"></i><p>Private Sauna (Sauna Suite)</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-mug-saucer"></i><p>Fully Equipped Kitchen</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-wifi"></i><p>High-Speed Wi-Fi</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-tv"></i><p>Smart TV &amp; Streaming</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-lightbulb"></i><p>Elegant Vanity &amp; Lighting</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-shuttle-van"></i><p>Airport Shuttle on Request</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-square-parking"></i><p>Nearby Parking Options</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-briefcase"></i><p>Dedicated Workspace</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-mug-hot"></i><p>Coffee &amp; Tea Selection</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-shirt"></i><p>In-Suite Ironing Station</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-wind"></i><p>Valera Swiss Hairdryer</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-shoe-prints"></i><p>Complimentary Slippers</p></div>
+      <div class="amenity-item"><i class="fa-solid fa-bottle-droplet"></i><p>Luxury Bath Essentials</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section">
+  <div class="container">
+    <div class="gallery-intro">
+      <p class="eyebrow reveal">Visual Story</p>
+      <h2 class="h2 reveal reveal-delay-1">Soho Suites Gallery</h2>
+      <p class="lead reveal reveal-delay-2">Calm textures, softened light, and modern serenity — right in Skopje Centre.</p>
+    </div>
+  </div>
+  <div class="container" style="max-width:1400px;">
+    <div class="masonry">
+      <figure><img src="images/sauna/sauna1.jpg" alt="Sauna Suite"/><figcaption>Sauna Suite</figcaption></figure>
+      <figure><img src="images/superior/bedroom1-6.jpg" alt="Superior Suite bedroom"/><figcaption>Superior Suite</figcaption></figure>
+      <figure><img src="images/deluxe/bedroom2-1.jpg" alt="Deluxe Suite bedroom"/><figcaption>Deluxe Suite</figcaption></figure>
+      <figure><img src="images/deluxe/kitchen2.jpg" alt="Deluxe Suite kitchen"/><figcaption>Deluxe Suite Kitchen</figcaption></figure>
+      <figure><img src="images/superior/bedroom2-1.jpg" alt="Superior Suite bedroom"/><figcaption>Superior Suite</figcaption></figure>
+      <figure><img src="images/superior/bedroom1-2.jpg" alt="Superior Suite bedroom"/><figcaption>Superior Suite</figcaption></figure>
+      <figure><img src="images/superior/bedroom2-6.jpg" alt="Superior Suite bedroom"/><figcaption>Superior Suite</figcaption></figure>
+      <figure><img src="images/superior/kitchen2.jpg" alt="Superior Suite kitchen"/><figcaption>Superior Suite Kitchen</figcaption></figure>
+      <figure><img src="images/superior/living-room2.jpg" alt="Superior Suite living room"/><figcaption>Superior Suite Living</figcaption></figure>
+      <figure><img src="images/superior/living-room8.jpg" alt="Superior Suite living room"/><figcaption>Superior Suite Living</figcaption></figure>
+      <figure><img src="images/superior/toilet1.jpg" alt="Superior Suite bathroom"/><figcaption>Superior Suite Bath</figcaption></figure>
+      <figure><img src="images/sauna/sauna11.jpg" alt="Sauna Suite"/><figcaption>Sauna Suite</figcaption></figure>
+      <figure><img src="images/sauna/living-room1.jpg" alt="Sauna Suite living room"/><figcaption>Sauna Suite Living</figcaption></figure>
+      <figure><img src="images/sauna/sauna3.jpg" alt="Private Finnish sauna"/><figcaption>Private Sauna</figcaption></figure>
+      <figure><img src="images/deluxe/kitchen1.jpg" alt="Deluxe Suite kitchen"/><figcaption>Deluxe Suite Kitchen</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="section section--dark">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="eyebrow reveal" style="color:var(--sand-lt);">Where to Find Us</p>
+        <h2 class="h2 reveal reveal-delay-1" style="color:var(--white);">Skopje<br><em>City Centre</em></h2>
+        <p class="lead reveal reveal-delay-2" style="color:rgba(253,250,246,.6);">Steps from Macedonia Square, the river promenade, museums and cafés. A quiet street. Private and perfectly central.</p>
+        <address class="reveal reveal-delay-3" style="font-style:normal;color:rgba(253,250,246,.45);font-size:.85rem;margin-bottom:24px;letter-spacing:.04em;">
+          Vasil Glavinov 14, Skopje
+        </address>
+        <ul class="about-checks reveal reveal-delay-3" style="margin-bottom:28px;">
+          <li style="color:rgba(253,250,246,.6);">2 min — Macedonia Square</li>
+          <li style="color:rgba(253,250,246,.6);">5 min — Stone Bridge</li>
+          <li style="color:rgba(253,250,246,.6);">6 min — City Park &amp; cafés</li>
+          <li style="color:rgba(253,250,246,.6);">10 min — Old Bazaar</li>
+          <li style="color:rgba(253,250,246,.6);">2 min — Marriott Hotel</li>
+        </ul>
+        <div class="loc-btns reveal reveal-delay-4">
+          <a class="btn btn--outline-light" href="https://maps.app.goo.gl/7T9GKRwvYmFTiWUCA?g_st=ipc" target="_blank" rel="noopener">Google Maps</a>
+          <a class="btn btn--outline-light" href="https://maps.app.goo.gl/QVhGMmSLvZNiN4n8A" target="_blank" rel="noopener">Apple Maps</a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2" style="overflow:hidden;">
         <iframe
-          title="Soho Suites — Skopje City Centre"
+          class="map-embed"
+          title="Soho Suites location map"
           src="https://www.google.com/maps?q=41.996973,21.428670&z=16&hl=en&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           allowfullscreen>
         </iframe>
       </div>
-    
-      <!-- (optional) branded badge overlay — keep if you like -->
-      <div class="map-badge">
-        <span class="dot"></span>
-        <div>
-          <strong>Soho Suites</strong>
-          <small>Skopje City Centre</small>
-        </div>
-      </div>
     </div>
-    
   </div>
 </section>
 
+<!-- CONTACT CTA -->
+<section class="section section--sand">
+  <div class="container" style="text-align:center;">
+    <p class="eyebrow reveal">Reservations</p>
+    <h2 class="h2 reveal reveal-delay-1" style="margin-bottom:16px;">Ready for your stay?</h2>
+    <p class="lead reveal reveal-delay-2" style="margin:0 auto 40px;max-width:480px;">Tell us your dates and preferred suite. We respond quickly.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;" class="reveal reveal-delay-3">
+      <a class="btn btn--primary" href="contact.html">Book Now</a>
+      <a class="btn btn--outline" href="https://wa.me/38971225555" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+</section>
 
-
-
-
-
-      <!--CONTACT-->
-      <section id="contact" class="section section-muted fade-in">
-        <div class="container grid-2">
-          <div>
-            <h2 class="h2">Book Your Stay</h2>
-            <p>Tell us your dates and preferred suite. We’ll respond quickly.</p>
-            <ul class="checks">
-              <li>WhatsApp: <a href="https://wa.me/38971225555" target="_blank" rel="noopener">+389 71 225 555</a></li>
-              <li>Email: <a href="mailto:soho-suites@soho-suites.com">soho-suites@soho-suites.com</a></li>
-              <li>Instagram: <a href="https://www.instagram.com/soho.suites_skopje" target="_blank" rel="noopener">Soho Suites</a></li>
-              <li>Booking.com: <a href="https://www.booking.com/hotel/mk/grand-central-apartment.en-gb.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaJMBiAEBmAEzuAEHyAEN2AED6AEB-AEBiAIBqAIBuAKIhZ7HBsACAdICJGUwNTdiMDJmLWQ0ODQtNDNhNS05ZDA3LTYwNzdlNmNkZWUyONgCAeACAQ&sid=d7539044c72fc86f4dd7113ecbd717a3&all_sr_blocks=1189657201_422004446_2_0_0&checkin=2025-10-13&checkout=2025-10-15&dest_id=-95841&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1189657201_422004446_2_0_0&hpos=1&matching_block_id=1189657201_422004446_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1189657201_422004446_2_0_0__17100&srepoch=1760002702&srpvid=00a543c5482a06a9&type=total&ucfs=1&" target="_blank" rel="noopener">Booking Soho Suites</a></li>
-            </ul>
-          </div>
-      
-          <!-- Formspree AJAX form -->
-          <form id="contactForm" class="form" action="https://formspree.io/f/xblzqjbv" method="POST" novalidate>
-            <!-- hidden helpers -->
-            <input type="hidden" name="_subject" value="Soho Suites — New Enquiry">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="text"   name="_honeypot" style="display:none">
-      
-            <div class="split">
-              <div class="field">
-                <span class="icon">👤</span>
-                <input class="input" id="name" name="name" type="text" placeholder=" " required>
-                <label for="name">Full name</label>
-              </div>
-      
-              <div class="field">
-                <span class="icon">✉️</span>
-                <input class="input" id="email" name="email" type="email" placeholder=" " required>
-                <label for="email">Email</label>
-              </div>
-            </div>
-      
-            <div class="field">
-              <span class="icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 14h18v6H3z"/>
-                  <path d="M7 14V9a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v5"/>
-                  <path d="M5 14v6m14-6v6"/>
-                </svg>
-              </span>
-      
-              <!-- Custom select -->
-              <div class="custom-select" id="suiteSelect">
-                <div class="selected">Select Preferred suite</div>
-                <ul class="options">
-                  <li data-value="Deluxe Suite">Deluxe Suite</li>
-                  <li data-value="Superior Suite">Superior Suite</li>
-                  <li data-value="Sauna Suite">Sauna Suite</li>
-                </ul>
-              </div>
-      
-              <!-- Value sent to email -->
-              <input type="hidden" name="suite" id="suite" required>
-            </div>
-      
-            <div class="field">
-              <span class="icon">📝</span>
-              <textarea class="input" id="message" name="message" placeholder=" " required></textarea>
-              <label for="message">Message</label>
-            </div>
-      
-            <button class="btn" type="submit">Book Your Stay</button>
-          </form>
-        </div>
-      </section>
-      
-      <!-- Put this right after the section -->
-      <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        // custom select -> hidden input
-        const sel = document.getElementById('suiteSelect');
-        if (sel){
-          const selected = sel.querySelector('.selected');
-          const options  = sel.querySelectorAll('.options li');
-          const hidden   = document.getElementById('suite');
-          selected.addEventListener('click', () => sel.classList.toggle('open'));
-          options.forEach(opt => {
-            opt.addEventListener('click', () => {
-              const v = opt.getAttribute('data-value') || opt.textContent.trim();
-              selected.textContent = v; hidden.value = v; sel.classList.remove('open');
-            });
-          });
-          document.addEventListener('click', (e) => { if (!sel.contains(e.target)) sel.classList.remove('open'); });
-        }
-      
-        // AJAX submit (prevents Formspree page; shows toast then optional redirect)
-        const form = document.getElementById('contactForm');
-        if (!form) return;
-      
-        form.addEventListener('submit', async (e) => {
-          e.preventDefault();
-          const btn = form.querySelector('button[type="submit"]'); if (btn) btn.disabled = true;
-      
-          try{
-            const res = await fetch(form.action, { method: 'POST', headers: { 'Accept':'application/json' }, body: new FormData(form) });
-            if(res.ok){
-              form.reset();
-              toast('Thank you — your enquiry has been sent. We’ll reply shortly.');
-              setTimeout(()=>{ window.location.href = 'thank-you.html'; }, 1200); // remove if you prefer no redirect
-            }else{
-              toast('Something went wrong. Please try again or WhatsApp us.', true);
-            }
-          }catch{
-            toast('Network error. Please try again or WhatsApp us.', true);
-          }finally{
-            if (btn) btn.disabled = false;
-          }
-        });
-      
-        function toast(msg, isError=false){
-          let t=document.querySelector('.toast');
-          if(!t){ t=document.createElement('div'); t.className='toast'; document.body.appendChild(t); }
-          t.textContent=msg; t.style.background=isError?'#f8e1e1':'#e4d4c4';
-          t.classList.add('show'); setTimeout(()=>t.classList.remove('show'), 1000);
-        }
-      });
-      </script>
-      <style>
-      .toast{
-        position:fixed; left:50%; bottom:20px; transform:translateX(-50%);
-        padding:12px 18px; border-radius:999px; border:1px solid rgba(0,0,0,.08);
-        backdrop-filter:blur(10px); box-shadow:0 10px 24px rgba(0,0,0,.12);
-        font-size:.95rem; color:#000; z-index:9999; opacity:0; pointer-events:none;
-        transition:opacity .35s ease, transform .35s ease;
-      }
-      .toast.show{ opacity:1; transform:translateX(-50%) translateY(-4px); }
-      </style>
-      
-
-      <!--CONTACT END-->
-
-
-
-
-
-
-
-<!--FOOTER-->
-  <footer class="footer">
-    <div class="container footer-inner">
-  
-      <!-- Left -->
-      <div class="footer-left">
-        <h3 class="footer-logo">Soho Suites</h3>
-        <p class="footer-sub">Skopje City Centre</p>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Soho Suites</div>
+        <p class="footer-tagline">Boutique luxury apartments in the heart of Skopje City Centre. Where refined design meets genuine hospitality.</p>
       </div>
-  
-      <!-- Center -->
-      <div class="footer-center">
-        <a href="contact.html">Contact</a>
+      <div class="footer-col">
+        <h4>Suites</h4>
+        <a href="deluxe.html">Deluxe Suite</a>
+        <a href="sauna.html">Sauna Suite</a>
+        <a href="superior.html">Superior Suite</a>
       </div>
-  
-      <!-- Right -->
-      <div class="footer-right">
-        <a href="mailto:soho-suites@soho-suites.com">Email</a>
+      <div class="footer-col">
+        <h4>Book</h4>
+        <a href="contact.html">Contact Us</a>
         <a href="https://wa.me/38971225555" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.booking.com/hotel/mk/grand-central-apartment.en-gb.html" target="_blank" rel="noopener">Booking.com</a>
       </div>
-  
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://www.instagram.com/soho.suites_skopje" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:soho-suites@soho-suites.com">Email</a>
+      </div>
     </div>
-    <div class="footer-bottom">© <span id="year"></span> Soho Suites — Skopje</div>
-  </footer>
-  
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Soho Suites — Skopje</span>
+      <span>Vasil Glavinov 14, Skopje City Centre</span>
+    </div>
+  </div>
+</footer>
 
-  
-  <!-- Mobile FAB: Book Now (mobile only) -->
-  <a class="book-fab" href="contact.html" target="_self" aria-label="Book now">Book Now</a>
-<!-- put this just before </body> -->
+<!-- Lightbox -->
+<div class="lightbox" role="dialog" aria-label="Image viewer">
+  <span class="lightbox-close" aria-label="Close">×</span>
+  <span class="lightbox-nav lightbox-prev" aria-label="Previous">‹</span>
+  <img src="" alt=""/>
+  <span class="lightbox-nav lightbox-next" aria-label="Next">›</span>
+</div>
 
+<!-- Mobile FAB -->
+<a class="book-fab" href="contact.html">Book Now</a>
 
-<script>
-  (function(){
-    const targets = document.querySelectorAll('.vs-block');
-    if(!('IntersectionObserver' in window)){ targets.forEach(t=>t.classList.add('in-view')); return; }
-    const io = new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
-      });
-    },{ threshold:.2 });
-    targets.forEach(t=>io.observe(t));
-  })();
-</script>
-
-
-<script>
-  // Fade-in on scroll
-  const faders = document.querySelectorAll('.fade-in');
-
-  const appearOptions = {
-    threshold: 0,                      // trigger sooner
-    rootMargin: "0px 0px -20% 0px"     // make Safari start the fade earlier
-  };
-
-  const appearOnScroll = new IntersectionObserver(function(entries, observer){
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    });
-  }, appearOptions);
-
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.vs-block');
-  
-    // Set gentle staggering delays
-    cards.forEach((el, i) => el.style.setProperty('--d', `${0.08 * i}s`));
-  
-    // Observe visibility for reveal
-    const obs = new IntersectionObserver((entries, o) => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        e.target.classList.add('in-view');
-        o.unobserve(e.target);
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
-  
-    cards.forEach(c => obs.observe(c));
-  });
-  </script>
-
-  <script>
-    document.querySelectorAll('.custom-select').forEach(select => {
-      const selected = select.querySelector('.selected');
-      const hiddenInput = document.getElementById('suite');
-    
-      selected.addEventListener('click', () => {
-        select.classList.toggle('open');
-      });
-    
-      select.querySelectorAll('.options li').forEach(option => {
-        option.addEventListener('click', e => {
-          selected.textContent = e.target.textContent;
-          hiddenInput.value = e.target.dataset.value;
-          select.classList.remove('open');
-        });
-      });
-    
-      // Close if clicking outside
-      document.addEventListener('click', e => {
-        if (!select.contains(e.target)) select.classList.remove('open');
-      });
-    });
-    </script>
-    <script>
-      const burger = document.querySelector('.burger');
-      const menu   = document.querySelector('.menu');
-      const nav    = document.querySelector('.nav');
-      const body   = document.body;
-    
-      burger.addEventListener('click', () => {
-        const open = menu.classList.toggle('open');
-        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-        body.style.overflow = open ? 'hidden' : '';     // lock/unlock page scroll
-        nav.classList.toggle('is-open', open);          // adds/removes backdrop class
-      });
-    
-      // Optional: close menu when a link is tapped
-      menu.addEventListener('click', (e) => {
-        if (e.target.closest('a')) {
-          menu.classList.remove('open');
-          nav.classList.remove('is-open');
-          body.style.overflow = '';
-          burger.setAttribute('aria-expanded', 'false');
-        }
-      });
-    </script>
-    
-
-
-
-
-
-
-       
-    <script>
-      // AJAX submit for all forms with class="form"
-      document.querySelectorAll('form.form').forEach(form => {
-        form.addEventListener('submit', async (e) => {
-          e.preventDefault();
-    
-          const submitBtn = form.querySelector('button[type="submit"]');
-          const endpoint  = form.getAttribute('action'); // https://formspree.io/f/xblzqjbv
-          const data      = Object.fromEntries(new FormData(form).entries());
-    
-          submitBtn.disabled = true;
-    
-          try {
-            const res = await fetch(endpoint, {
-              method: 'POST',
-              headers: { 'Accept': 'application/json' },
-              body: new FormData(form) // Formspree accepts FormData directly
-            });
-    
-            if (res.ok) {
-              form.reset();
-              // show a luxe inline success state
-              showToast('Thank you — your enquiry has been sent. We’ll reply shortly.');
-            } else {
-              showToast('Hmm, something went wrong sending your message. Please try again or WhatsApp us.', true);
-            }
-          } catch (err) {
-            showToast('Network error. Please try again or WhatsApp us.', true);
-          } finally {
-            submitBtn.disabled = false;
-          }
-        });
-      });
-    
-      // Minimal toast matching your style
-      function showToast(msg, isError=false){
-        let toast = document.querySelector('.toast');
-        if(!toast){
-          toast = document.createElement('div');
-          toast.className = 'toast';
-          document.body.appendChild(toast);
-        }
-        toast.textContent = msg;
-        toast.style.background = isError ? '#f8e1e1' : '#e4d4c4';
-        toast.classList.add('show');
-        setTimeout(()=> toast.classList.remove('show'), 4000);
-      }
-    </script>
-    <style>
-      .toast{
-        position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%);
-        padding: 12px 18px; border-radius: 999px; border: 1px solid rgba(0,0,0,.08);
-        backdrop-filter: blur(10px); box-shadow: 0 10px 24px rgba(0,0,0,.12);
-        font-size: 0.95rem; color: #000; z-index: 9999; opacity: 0; pointer-events: none;
-        transition: opacity .35s ease, transform .35s ease;
-      }
-      .toast.show{ opacity: 1; transform: translateX(-50%) translateY(-4px); }
-    </style>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const sel = document.getElementById('suiteSelect');
-        if (!sel) return;
-      
-        const selected = sel.querySelector('.selected');
-        const options  = sel.querySelectorAll('.options li');
-        const hidden   = document.querySelector('#contact input[name="suite"]'); // scoped to the contact section
-      
-        // open/close the whole container (matches CSS above)
-        selected.addEventListener('click', () => sel.classList.toggle('open'));
-      
-        options.forEach(li => {
-          li.addEventListener('click', () => {
-            const v = li.dataset.value || li.textContent.trim();
-            selected.textContent = v;
-            hidden.value = v;                 // value that gets emailed
-            sel.classList.remove('open');
-          });
-        });
-      
-        // click outside to close
-        document.addEventListener('click', (e) => {
-          if (!sel.contains(e.target)) sel.classList.remove('open');
-        });
-      });
-      </script>
-      
-    
-
+<script src="app.js"></script>
 </body>
 </html>

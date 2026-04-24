@@ -1,71 +1,60 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Thank you — Soho Suites</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/favicon.png">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Thank You — Soho Suites</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="images/favicon.png"/>
 </head>
 <body>
 
-  <!-- Minimal header (optional) -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html" aria-label="Soho Suites"></a>
-      <nav class="menu">
-        <a href="index.html#about">About</a>
-        <a href="deluxe.html">Deluxe Suite</a>
-        <a href="sauna.html">Sauna Suite</a>
-        <a href="superior.html">Superior Suite</a>
-        <a class="btn" href="index.html#contact">Contact</a>
-      </nav>
-      <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+<!-- NAV -->
+<header class="nav scrolled">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><img class="logo-white" src="logo-white.png" alt="Soho Suites"><img class="logo-dark" src="logo-dark.png" alt="Soho Suites"></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="deluxe.html">Deluxe</a>
+      <a href="sauna.html">Sauna Suite</a>
+      <a href="superior.html">Superior</a>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="nav-panel">
+  <a href="index.html">Home</a>
+  <a href="deluxe.html">Deluxe Suite</a>
+  <a href="sauna.html">Sauna Suite</a>
+  <a href="superior.html">Superior Suite</a>
+</nav>
+
+<main class="thanks-page">
+  <div class="thanks-card">
+    <div class="thanks-icon">✓</div>
+    <p class="eyebrow" style="margin-bottom:16px;">Enquiry Received</p>
+    <h1 class="h2" style="margin-bottom:16px;">Thank you</h1>
+    <p class="lead" style="margin:0 auto 40px;">We've received your enquiry and will reply shortly. In the meantime, feel free to reach us on WhatsApp for a faster response.</p>
+    <div class="thanks-cta">
+      <a class="btn btn--primary" href="index.html">Back to Home</a>
+      <a class="btn btn--outline" href="https://wa.me/38971225555" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+      <a class="btn btn--outline" href="contact.html">New Enquiry</a>
     </div>
-  </header>
+    <p style="margin-top:24px;font-size:.78rem;color:var(--muted);">You'll be redirected to the homepage in a few seconds.</p>
+  </div>
+</main>
 
-  <!-- Thank You -->
-  <section class="thanks">
-    <div class="thanks-card">
-      <div class="thanks-badge" aria-hidden="true">✓</div>
-      <h1 class="display">Thank you</h1>
-      <p class="lead center">We’ve received your enquiry. We’ll reply shortly.</p>
-
-      <div class="cta">
-        <a class="btn" href="index.html">Back to Home</a>
-        <a class="btn ghost" href="index.html#suites">Explore Suites</a>
-        <a class="btn ghost" href="https://wa.me/38971225555" target="_blank" rel="noopener">WhatsApp Us</a>
-      </div>
-
-      <small class="thanks-note">You’ll be redirected to the homepage in a few seconds.</small>
-    </div>
-  </section>
-
-  <script>
-    // Mobile menu toggle (same as other pages)
-    const burger = document.querySelector('.burger');
-    const menu   = document.querySelector('.menu');
-    const nav    = document.querySelector('.nav');
-    const body   = document.body;
-    if (burger){
-      burger.addEventListener('click', () => {
-        const open = menu.classList.toggle('open');
-        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-        body.style.overflow = open ? 'hidden' : '';
-        nav.classList.toggle('is-open', open);
-      });
-      menu.addEventListener('click', (e) => {
-        if (e.target.closest('a')) {
-          menu.classList.remove('open'); nav.classList.remove('is-open'); body.style.overflow = '';
-          burger.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
-
-    // Gentle auto-redirect (remove if you don't want it)
-    setTimeout(() => { window.location.href = 'index.html'; }, 6000);
-  </script>
+<span id="year" style="display:none"></span>
+<a class="book-fab" href="contact.html">Book Now</a>
+<script src="app.js"></script>
+<script>
+  setTimeout(() => { window.location.href = 'index.html'; }, 6000);
+</script>
 </body>
 </html>
